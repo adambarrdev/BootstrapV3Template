@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Components";
+}
+<div class="page-header">
+    <h1><i class="fa fa-gear"></i> Components</h1>
+    <p class="lead">Everything Included</p>
+</div>
+
+<section id="notifications">
+    <h4>Notifications</h4>
+
+    <ul class="list-inline">
+        <li><button class="btn btn-success">Success</button></li>
+        <li><button class="btn btn-info">Info</button></li>
+        <li><button class="btn btn-warning">Warning</button></li>
+        <li><button class="btn btn-danger">Danger</button></li>
+    </ul>
+</section>
+
+@section scripts
+{
+<script>
+    $(function () {
+        $(".btn-success").on("click", function () {
+            app.notifications.success("A success message...");
+        });
+        $(".btn-info").on("click", function () {
+            app.notifications.info("An info message...");
+        });
+        $(".btn-warning").on("click", function () {
+            app.notifications.warning("A warning message...");
+        });
+        $(".btn-danger").on("click", function () {
+            app.notifications.error("An error message...");
+        });
+    });
+</script>    
+}
